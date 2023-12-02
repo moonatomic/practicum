@@ -195,12 +195,13 @@ def root(a: Zm):
     else:
         raise ValueError('Even module')
 
-p = int(input('Enter module p: '))
-Zm.setModule(p)
+if __name__ == '__main__':
+    p = int(input('Enter module p: '))
+    Zm.setModule(p)
 
-num = Zm(int(input('Enter number: ')))
-try:
-    rt = root(num).n
-    print(f'Square root of {num.n} modulo {Zm.mod()} is {rt}')
-except ValueError:
-    print(f'{num.n} is not a square modulo {Zm.mod()}')
+    num = Zm(int(input('Enter number: ')))
+    try:
+        rt = root(num).n
+        print(f'Square root of {num.n} modulo {Zm.mod()} is {rt}')
+    except ValueError:
+        print(f'{num.n} is not a square modulo {Zm.mod()}')
